@@ -1,4 +1,5 @@
 from flask import Flask, send_file
+import pandas as pd
 import os
 
 
@@ -6,6 +7,5 @@ app = Flask(__name__)
 
 @app.route('/')
 def download_csv():
-    csv_path = os.path.join('./DataFrame_Regiao.csv')
-
-    return send_file(csv_path, as_attachment=True)
+    df = pd.read_csv('./DataFrame_Regiao.csv')
+    return df.to_dict(), 200
