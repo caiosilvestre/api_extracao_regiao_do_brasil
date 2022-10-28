@@ -10,4 +10,4 @@ def download_csv():
     response.headers['Content-Disposition'] = cd
     response.mimetype='text/csv'
 
-    return response
+    return 'hellow'
